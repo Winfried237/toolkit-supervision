@@ -18,7 +18,7 @@ if (Test-Path $CONF) {
 }
 
 # Affichage avec interpolation de chaînes
-Write-Host "Serveur : $SERVER_NAME"
+Write-Host "Serveur : svr-lab-01"
 Write-Host "Date : $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
 Write-Host "Rapports : $REPORT_DIR"
-Write-Host "Seuil disque : $DISK_THRESHOLD%"
+Write-Host "Seuil disque : 80%"
