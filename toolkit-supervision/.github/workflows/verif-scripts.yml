@@ -1,0 +1,22 @@
+name: Verification des scripts
+on:
+pull_request:
+branches: [main]
+jobs:
+controle:
+runs-on: ubuntu-latest
+steps:
+- name: Recuperer le code
+uses: actions/checkout@v4
+- name: Verifier la syntaxe des scripts Bash
+run: |
+for fichier in scripts/*.sh; do
+echo "--- $fichier"
+bash -n "$fichier"
+done
+- name: Verifier les cles de configuration obligatoires
+run: |
+for cle in SERVER_NAME REPORT_DIR DISK_THRESHOLD; do
+grep -q "^${cle}=" config/toolkit.conf || { echo "Cle manquante :
+$cle"; exit 1; }
+done
