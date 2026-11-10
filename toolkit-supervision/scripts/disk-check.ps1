@@ -22,3 +22,5 @@ Write-Host "Utilisation de C: : ${USAGE}%  (seuil : ${DISK_THRESHOLD}%)"
 if ([int]$USAGE -gt [int]$DISK_THRESHOLD) {
     Write-Host "ALERTE : seuil depasse"
 } else {
+    Write-Hoste "every thing is goot"
+    }
